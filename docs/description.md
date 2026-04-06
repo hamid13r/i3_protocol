@@ -35,4 +35,4 @@ i3 is executed almost entirely through shell-scripts, so some of the shell probl
 
 ---
 
-[Next: Step-by-Step Guide →](step-by-step.md)
+[Next: Overal Description →](overall-description.md)
