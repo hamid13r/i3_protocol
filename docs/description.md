@@ -4,7 +4,7 @@
 
 If you are reading this protocol, you are one of lucky people who work on the subvolume averaging of a target that is specifically located and relatively rare in your tomograms. However, this might be one the few ways of actually getting somewhere so it is not all bad! 
 
-i3 is a software package developped in labs on Ken Taylor and later in [The Lui Lab](https://medicine.yale.edu/lab/jun-liu/).
+i3 is a software package developped in labs on Ken Taylor and later in [The Liu Lab](https://medicine.yale.edu/lab/jun-liu/).
 
 We have been using it on our targets including Prohibitin and ATPSynthase so I am writing my protocol to help with others who might want to use it as well
 
