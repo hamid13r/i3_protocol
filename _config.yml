@@ -1,0 +1,33 @@
+# Jekyll Configuration for GitHub Pages
+theme: jekyll-theme-minimal
+
+# Site title and description
+title: i3 Protocol Documentation
+description: Comprehensive documentation for the i3 protocol
+
+# GitHub Pages settings
+url: "https://yourusername.github.io"
+baseurl: "/i3_protocol"
+
+# Navigation
+nav_links:
+  - title: Home
+    url: /
+  - title: Description
+    url: /docs/description
+  - title: Step-by-Step
+    url: /docs/step-by-step
+  - title: Example Workflow
+    url: /docs/example-workflow
+  - title: Tips & Tricks
+    url: /docs/tips-tricks
+
+# Enable markdown features
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files from build
+exclude:
+  - .gitignore
+  - README.md
+  - Gemfile
