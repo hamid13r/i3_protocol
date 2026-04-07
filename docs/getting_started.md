@@ -5,14 +5,21 @@ This is how ytou get started after picking your particles manually in dipole pic
 Then in `janlevinson` you need to make a directory and put all the pos files in it. 
 
 ## Running the python code
-    - First run `conda activate cc3d` so you have all python packages 
-    - Then run `python ~/bin/pos2i3.py --pos pos/ --scale 1 --random`
-    - `--pos` is the directory with pos files that are assumed to be named the same as tomograms, only with .pos instead of .mrc
-    - You might need to rename these files, you can use the `rename 's/FIND/REPLACE/g' *.pos` for bulk renaming
-    - ***warning*** this might be difficult to undo, make sure you have a copy somewhere.
-    - `--scale` is to change the binning. this way you can pick on bin 8 and run on bin2 tomograms.
-    - ***warning*** I have seem inconsistencies in scaling. Also the contrast will go down significantly when you scale up
-    - `--random` if you want to randomize the angle around z to get out of missing wedge. you may want to start with this, or do a round of alignment and then do the randomization
+    - First run 
+    ```bash
+    conda activate cc3d
+    ```
+    - Then run 
+    ```bash
+    python ~/bin/pos2i3.py --pos pos/ --scale 1 --random
+    ```
+
+- `--pos` is the directory with pos files that are assumed to be named the same as tomograms, only with .pos instead of .mrc
+- You might need to rename these files, you can use the `rename 's/FIND/REPLACE/g' *.pos` for bulk renaming
+- ***warning*** this might be difficult to undo, make sure you have a copy somewhere.
+- `--scale` is to change the binning. this way you can pick on bin 8 and run on bin2 tomograms.
+- ***warning*** I have seem inconsistencies in scaling. Also the contrast will go down significantly when you scale up
+- `--random` if you want to randomize the angle around z to get out of missing wedge. you may want to start with this, or do a round of alignment and then do the randomization
 
 
 ## Created files and directories
@@ -74,3 +81,7 @@ You can try different trf directories with different particles and settings by c
 # directory with initial alignment parameters (relative to top directory)
 export TRFDIR="trf_test"
 ```
+
+---
+
+[← Back: Overall Description](overall-description.md) | [Next: Parameters Directory →](parameters.md)
