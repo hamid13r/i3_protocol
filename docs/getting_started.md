@@ -5,15 +5,14 @@ This is how ytou get started after picking your particles manually in dipole pic
 Then in `janlevinson` you need to make a directory and put all the pos files in it. 
 
 ## Running the python code
-    - First run 
-    ```bash
-    conda activate cc3d
-    ```
-    - Then run 
-    ```bash
-    python ~/bin/pos2i3.py --pos pos/ --scale 1 --random
-    ```
-
+- First run 
+```bash
+conda activate cc3d
+```
+- Then run 
+```bash
+python ~/bin/pos2i3.py --pos pos/ --scale 1 --random
+```
 - `--pos` is the directory with pos files that are assumed to be named the same as tomograms, only with .pos instead of .mrc
 - You might need to rename these files, you can use the `rename 's/FIND/REPLACE/g' *.pos` for bulk renaming
 - ***warning*** this might be difficult to undo, make sure you have a copy somewhere.
