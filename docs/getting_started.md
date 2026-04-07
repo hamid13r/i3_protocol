@@ -19,7 +19,7 @@ Then in `janlevinson` you need to make a directory and put all the pos files in 
 1. The definitions directory: `defs/`
 In this directory there will be two files
 `defs/maps`: this file has 3 columns, the directory of the tomograms, the name of the tomogram, and the path to the tlt file for that tomogram. The tlt file has the range of tilts for missing-wedge compensation later. If assumes -60 to 60 with 2 degree step, but you can change it if your data is different. You will need to edit this file in `~/bin/` but I dont think this makes any significant difference.  
-```
+```bash
 ../maps/ NAD054_1_lam12_ts_007.mrc_13.30Apx.mrc ../tlt/NAD054_1_lam12_ts_007.mrc_13.30Apx.tlt
 ../maps/ NAD054_1_lam12_ts_005.mrc_13.30Apx.mrc ../tlt/NAD054_1_lam12_ts_005.mrc_13.30Apx.tlt
 ../maps/ NAD055_3_lam15_ts_008.mrc_13.30Apx.mrc ../tlt/NAD055_3_lam15_ts_008.mrc_13.30Apx.tlt
@@ -29,7 +29,7 @@ In this directory there will be two files
 ```
 
 `defs/sets`: This file has 2 columns, the name of the tomogram and name of the `.trf` file that has the particles from that tomogram. The `.trf` file is created by the python code and I will explain it later.
-```
+```bash
 NAD054_1_lam12_ts_007.mrc_13.30Apx.mrc NAD054_1_lam12_ts_007.mrc_13.30Apx
 NAD054_1_lam12_ts_005.mrc_13.30Apx.mrc NAD054_1_lam12_ts_005.mrc_13.30Apx
 NAD055_3_lam15_ts_008.mrc_13.30Apx.mrc NAD055_3_lam15_ts_008.mrc_13.30Apx
@@ -58,3 +58,19 @@ NAD054_1_lam12_ts_004.mrc_0000002 495 588 80 0.0 0.0 0.0 0.4589448088207747 -0.8
 ```
 
 4. The tlt directory: `tlt/`
+This is where you put the tilt files. The names of the tilt files should match the names in the `defs/maps` file. The tlt files are in the old protomo formatn and I dont recommend changing them. This is just used to create a wedge-mask in the fourier space for alignment and classification steps to compensate for the missing wedge.
+```bash
+TILT SERIES TOMOGRAM
+AXIS
+TILT AZIMUTH 90.0
+IMAGE 0 FILE TOMOGRAM_3 ORIGIN [463 479] TILT ANGLE -51.00 ROTATION 0.000
+IMAGE 1 FILE TOMOGRAM_4 ORIGIN [463 479] TILT ANGLE -48.00 ROTATION 0.000
+IMAGE 2 FILE TOMOGRAM_5 ORIGIN [463 479] TILT ANGLE -45.00 ROTATION 0.000
+...
+```
+You can try different trf directories with different particles and settings by changing the 
+
+```bash
+# directory with initial alignment parameters (relative to top directory)
+export TRFDIR="trf_test"
+```
