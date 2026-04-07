@@ -43,3 +43,6 @@ Every cycle of i3 goes through the following steps:
     - the parameter file gets copied from `param-template.sh`
     - it is better to copy the last cycle param file again
     - start from step 2 again for the next cycle
+
+
+[Next: Getting Started →](getting_started.md)
