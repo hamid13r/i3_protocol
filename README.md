@@ -5,6 +5,7 @@ Welcome to the i3 Protocol documentation. This repository contains comprehensive
 ## Table of Contents
 
 - [Description](docs/description.md) - Overview of the i3 protocol
+- [Getting Started](docs/getting_started.md) - How to get started with the protocol
 - [Step-by-Step Guide](docs/step-by-step.md) - Detailed instructions for using the protocol
 - [Example Workflow](docs/example-workflow.md) - Real-world usage examples
 - [Tips & Tricks](docs/tips-tricks.md) - Best practices and useful tips
