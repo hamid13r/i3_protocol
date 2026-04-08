@@ -2,13 +2,22 @@
 
 ## Prerequisites
 
-Before starting, ensure you have:
-- [Prerequisite 1]
-- [Prerequisite 2]
-- [Prerequisite 3]
+As we discussed you need your tomograms and all the other files in place to get started. I will show you one cycle of the workflow with an example here:
 
-## Step 1: Setup
-
+## Step 1: Creating the Global average
+First you need to run:
+```bash
+loadi3 
+```
+which is an alias to `source /opt/i3/0.9.9.3/setup.sh; export PATH="~/i3bin/:~/bin/:$PATH"; source /home/janlevinson/.zshrc;` and then run the following command to create the global average:
+```bash
+i3jinitial.sh
+```
+The files created in this step are:
+| File | Description | Preview |
+|----------|----------|----------|
+| Data 1   | Data 2   |      |
+| Data 4   | Data 5   |       |
 [Detailed instructions for setting up the protocol]
 
 ```
@@ -16,29 +25,80 @@ Before starting, ensure you have:
 example command here
 ```
 
-## Step 2: Configuration
-
-[Detailed instructions for configuring the protocol]
-
+## Step 2: Creating the Reference
+Here you need to edit the `cycle-000/param.sh` file and change the `REFIMG` variable: leave empty for global average or point to a file. Then run:
+```bash
+i3jreference.sh 0
 ```
-# Example configuration
-config example here
+This will create the reference for this cycle, I believe masked and filtered. 
+Files created in this step are:
+| File | Description | Preview |
+|----------|----------|----------|
+| Data 1   | Data 2   |      |
+| Data 4   | Data 5   |       |
+
+## Step 3: Mutltireference Alignment
+The settings are controlled by the `cycle-000/param.sh` in the `MRA` section. You need to run:
+
+```bash
+i3jalign.sh 0
+```
+This will run the alignment for this cycle. The files created in this step are:
+| File | Description | Preview |
+|----------|----------|----------|
+| Data 1   | Data 2   |      |
+| Data 4   | Data 5   |       |
+
+
+
+## Step 4: MSA
+After setting the variables in the `MSA` section of the `param.sh` file, you need to run:
+```bash
+i3jmsa.sh 0
 ```
 
-## Step 3: Implementation
+This creates the factors and the files created in this step are:
+| File | Description | Preview |
+|----------|----------|----------|
+| Data 1   | Data 2   |      |
+| Data 4   | Data 5   |       |
 
-[Detailed instructions for implementing the protocol]
-
+## Step 5: Classification
+After setting the variables in the `CLS` section of the `param.sh` file, you need to run:
+```bash
+i3jclass.sh 0
 ```
-# Example implementation
-implementation example here
+
+This creates the classes and the files created in this step are:
+| File | Description | Preview |    
+|----------|----------|----------|
+| Data 1   | Data 2   |      |
+| Data 4   | Data 5   |       |
+
+## Step 6: Aligning the Selected Class Averages
+After setting the variables in the `SEL` section of the `param.sh` file, specially the `SELCLS` that controls which classification to use, you need to run:
+```bash
+i3cp.sh 0
+i3jselect.sh 0
 ```
 
-## Step 4: Verification
+This will aling the class averages and creates the files:
+| File | Description | Preview |    
+|----------|----------|----------|
+| Data 1   | Data 2   |      |
+| Data 4   | Data 5   |       |
 
-[Detailed instructions for verifying the setup]
-
+## Step 7: Next Cycle
+At the end of a cycle you need to run:
+```bash
+i3jnext.sh 0 1
 ```
+
+This will be the same as `i3jinitial.sh` but for the next cycle. The files created in this step are:
+| File | Description | Preview |    
+|----------|----------|----------|
+| Data 1   | Data 2   |      |  
+| Data 4   | Data 5   |       |
 # Example verification
 verification example here
 ```
