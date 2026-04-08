@@ -22,7 +22,7 @@ python ~/bin/pos2i3.py --pos pos/ --scale 1 --random
 
 
 ## Created files and directories
-1. ### The definitions directory: `defs/`
+### 1. The definitions directory: `defs/`
 In this directory there will be two files
 `defs/maps`: this file has 3 columns, the directory of the tomograms, the name of the tomogram, and the path to the tlt file for that tomogram. The tlt file has the range of tilts for missing-wedge compensation later. If assumes -60 to 60 with 2 degree step, but you can change it if your data is different. You will need to edit this file in `~/bin/` but I dont think this makes any significant difference.  
 ```bash
@@ -44,13 +44,14 @@ NAD054_1_lam12_ts_004.mrc_13.30Apx.mrc NAD054_1_lam12_ts_004.mrc_13.30Apx
 ```
 
 
-2. ### The maps directory: `maps/`
+### 2. The maps directory: `maps/`
 This is where you put the tomograms. The names of the tomograms should match the names in the `defs/maps` file. You can also put the tomograms somewhere else and soft-link here. At any point you can change between raw, denoised, sirt, etc. tomograms, just make sure the names match.
 
-This will not be done by the code and needs to be donr **manually** by the user.
+This will not be done by the code and needs to be done **manually** by the user.
 
 
-3. ### The trf directory: `trf/`
+
+### 3. The trf directory: `trf/`
 This is where the main function of the code happens. The python code will read the pos files and create a `.trf` file for each tomogram. 
 The `.trf` file has XX columns:
     - **Column1:** Name of the particle, which is tomogram name + particle number (e.g., NAD054_1_lam12_ts_007.mrc_13.30Apx_0001)
@@ -63,7 +64,7 @@ NAD054_1_lam12_ts_004.mrc_0000001 449 474 69 0.0 0.0 0.0 0.42774992428180214 0.8
 NAD054_1_lam12_ts_004.mrc_0000002 495 588 80 0.0 0.0 0.0 0.4589448088207747 -0.877093460401622 -0.14169235751151515 -0.7815058323258316 -0.3226645287341817 -0.5339814940027957 0.42263257860365183 0.35580143847019063 -0.8335388652518677
 ```
 
-4. ### The tlt directory: `tlt/`
+### 4. The tlt directory: `tlt/`
 This is where you put the tilt files. The names of the tilt files should match the names in the `defs/maps` file. The tlt files are in the old protomo formatn and I dont recommend changing them. This is just used to create a wedge-mask in the fourier space for alignment and classification steps to compensate for the missing wedge.
 ```bash
 TILT SERIES TOMOGRAM
@@ -81,6 +82,10 @@ You can try different trf directories with different particles and settings by c
 export TRFDIR="trf_test"
 ```
 
+## Important Notes
+- You cannot have an empty line *ANYWHERE* so try to edit files as little as possible and use vim if you can
+- You cannot have duplicate particles, meaning that their x, y, z coordiantes cannot all be the same
+- i3 is **not** good at giving you informative error messages
 ---
 
 [← Back: Overall Description](overall-description.md) | [Next: Parameters Directory →](parameters.md)
