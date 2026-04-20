@@ -86,6 +86,7 @@ export TRFDIR="trf_test"
 - You cannot have an empty line *ANYWHERE* so try to edit files as little as possible and use vim if you can
 - You cannot have duplicate particles, meaning that their x, y, z coordiantes cannot all be the same
 - i3 is **not** good at giving you informative error messages
+- Parameteres are loaded in bash, do not put spaces are characters unless necessary, you can always *comment things out* by adding a `#` before them
 ---
 
 [← Back: Overall Description](overall-description.md) | [Next: Parameters Directory →](parameters.md)

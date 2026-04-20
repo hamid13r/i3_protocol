@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-As we discussed you need your tomograms and all the other files in place to get started. I will show you one cycle of the workflow with an example here:
+As we discussed you need your tomograms and all the other files in place to get started. I will show you one cycle of the workflow with an example here, these are some tomograms that have amyloid fibrils in them, and I will show you how to get the global average, create the reference, do the multireference alignment, MSA, classification, and then align the class averages. The pos files were created using dragonfly and amira and then I wrote a python code to convert them to the format needed for i3.
 
 ## Step 1: Creating the Global average
 First you need to run:
@@ -16,8 +16,10 @@ i3jinitial.sh
 The files created in this step are:
 | File | Description | Preview |
 |----------|----------|----------|
-| Data 1   | Data 2   |      |
-| Data 4   | Data 5   |       |
+| filament-000.i3d   | This is the i3 file that has the aligment info, etc.   |  N/A    |
+| filament-000-raw-totsum.img   | Global average from the initial coordinates and rotations   |   ![global average](media/raw-totsum.png)    |
+| filament-000-raw-totsum-y.mrc   | Global average rotated for side view   |    ![global average y](media/raw-totsum-y.png)     |
+| param.sh  | Copy of param-template.sh for editing in the cycle if needed  |    ![global average z](media/raw-totsum-z.png)     |
 [Detailed instructions for setting up the protocol]
 
 ```
