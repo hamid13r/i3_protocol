@@ -17,9 +17,9 @@ The files created in this step are:
 | File | Description | Preview |
 |----------|----------|----------|
 | filament-000.i3d   | This is the i3 file that has the aligment info, etc.   |  N/A    |
-| filament-000-raw-totsum.img   | Global average from the initial coordinates and rotations   |   ![global average](media/raw-totsum.png)    |
-| filament-000-raw-totsum-y.mrc   | Global average rotated for side view   |    ![global average y](media/raw-totsum-y.png)     |
-| param.sh  | Copy of param-template.sh for editing in the cycle if needed  |    ![global average z](media/raw-totsum-z.png)     |
+| filament-000-raw-totsum.img   | Global average from the initial coordinates and rotations   |   ![global average](/media/raw-totsum.png)    |
+| filament-000-raw-totsum-y.mrc   | Global average rotated for side view   |    ![global average y](/media/raw-totsum-y.png)     |
+| param.sh  | Copy of param-template.sh for editing in the cycle if needed  |    ![global average z](/media/raw-totsum-z.png)     |
 [Detailed instructions for setting up the protocol]
 
 ```
