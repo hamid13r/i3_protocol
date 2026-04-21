@@ -84,11 +84,11 @@ This creates the factors and the files created in this step are:
 
 If you need to redo this part edit the parameters in the `param.sh` file and run the command again, it will overwrite the previous files. 
 ## Step 5: Classification
-After setting the variables in the `CLS` section of the `param.sh` file, you need to run:
+After setting the variables in the `CLS` section of the `param.sh` file, including number of classes and which factors to use, you need to run:
 ```bash
 i3jclass.sh 0
 ```
-
+ 
 This creates the classes and the files created in this step are:
 | File | Description | Preview |    
 |----------|----------|----------|
