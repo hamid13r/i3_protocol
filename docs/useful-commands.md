@@ -27,7 +27,7 @@ options:
 - `-mw <r> [r] [r]`: Set rectangular mask width in each dimension.
 - `-md <r> [r] [r]`: Set oval mask diameter in each dimension.
 - `-ms <r> [r] [r]`: Set decay radius for soft edge in each dimension.
-- `-minv <k>`: Invert masking, useful for masking out a region instead of keeping it.
+- `-minv`: Invert masking, useful for masking out a region instead of keeping it.
 
 ### Getting Alignment and Classification Info
 ```bash
