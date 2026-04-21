@@ -260,4 +260,4 @@ export SELCLS="4"
 - The masks and filters are similar to the MRA step, but they are applied to the class averages instead of the reference.
 - The search parameters are also similar to the MRA step, but they are applied to the class averages instead of the raw motifs. 
 
-[← Back: Getting Started](getting_started.md) | [Next: Step-by-step Example →](step_by_step.md)
+[← Back: Getting Started](getting_started.md) | [Next: Step-by-step Example →](step-by-step.md)
