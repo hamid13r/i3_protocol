@@ -58,10 +58,10 @@ i3jalign.sh 0
 This will run the alignment for this cycle. The files created in this step are:
 | File | Description | Preview |
 |----------|----------|----------|
-| filament-000-old.i3d   | Data 2   |  N/A    |
-| filament-000.i3d  | Data 5   |    N/A   |
-| i3alignrun.sh | des |  N/A   |
-| i3align/ | directory with the aligned particles and their info  |   N/A  |
+| filament-000-old.i3d   | Data file with alignment info from the previous cycle   |  N/A    |
+| filament-000.i3d  | Data file with alignment info for the current cycle   |    N/A   |
+| i3alignrun.sh | Script that is used to run the alignment process (not needed by user) |  N/A   |
+| i3align/ | Directory with the aligned particles and their info (not needed by user) |   N/A  |
 
 
 If you need to redo this part you can delete the `i3align/` directory and then `i3jalign.sh 0`, change the prameters if needed and run the command again.
@@ -131,25 +131,10 @@ At the end of a cycle you need to run:
 i3jnext.sh 0 1
 ```
 
-This will be the same as `i3jinitial.sh` but for the next cycle. The files created in this step are:
-| File | Description | Preview |    
-|----------|----------|----------|
-| Data 1   | Data 2   |      |  
-| Data 4   | Data 5   |       |
-# Example verification
-verification example here
-```
-
-## Troubleshooting
-
-### Issue 1
-**Problem**: [Description]
-**Solution**: [How to fix it]
-
-### Issue 2
-**Problem**: [Description]
-**Solution**: [How to fix it]
+This will be the same as `i3jinitial.sh` but for the next cycle. Same files are created.
+Hopefully, the global average looks better than the last cycle:
+![new global average image](/media/new-totsum.png)
 
 ---
 
-[← Back: Description](description.md) | [Next: Example Workflow →](example-workflow.md)
+[← Back: Description](description.md) | [Next: Useful Commands →](useful-commands.md)
